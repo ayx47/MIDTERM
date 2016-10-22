@@ -15,8 +15,7 @@ output <- function(x) {
     # code1111 <- t(code1111)
     Total <- unite(code1111[1:11],"Total",c(TOTAL1, TOTAL2, TOTAL3, TOTAL4, TOTAL5, TOTAL6, TOTAL7, TOTAL8, TOTAL9, TOTAL10, TOTAL1_2), sep = ",")
     MT <- unite(code1111[12:22], "MT", c(MT1, MT2, MT3, MT4, MT5, MT6, MT7, MT8, MT9, MT10, MT1_2), sep = ",")
-    FT <- unite(code1111[23:33], "FT", c(FT1, FT2, FT3, FT4, FT5, FT6, FT7, FT8, FT9, FT10, FT1_2), sep = ",")
-    agrt <- merge(Total, MT, FT)
+    agrt <- merge(Total, MT)
     # agrt
     test <- t(agrt)
     # test
