@@ -4,11 +4,6 @@ callRow <- function(x) {
     return(rownum)
 }
 
-# fileName <- "YEAR09_NAC4.txt"
-# conn <- file(fileName, open="r")
-# linn <- readLines(conn)
-# for (i in callRow(x)) {
-
 output <- function(x) {
     NAC4 <- YEAR09_NAC4
     code1111 <- YEAR09_NAC4[callRow(x),-1:-2]
@@ -17,23 +12,12 @@ output <- function(x) {
     MT <- unite(code1111[12:22], "MT", c(MT1, MT2, MT3, MT4, MT5, MT6, MT7, MT8, MT9, MT10, MT1_2), sep = ",")
     FT <- unite(code1111[23:33], "FT", c(FT1, FT2, FT3, FT4, FT5, FT6, FT7, FT8, FT9, FT10, FT1_2), sep = ",")
     WHT <- unite(code1111[34:44], "WHT", c(WHT1, WHT2, WHT3, WHT4, WHT5, WHT6, WHT7, WHT8, WHT9, WHT10, WHT1_2), sep = ",")
-    agrt <- cbind(Total, MT, FT, WHT)
+    WHM <- unite(code1111[45:55],"WHM",c(WHM1, WHM2, WHM3, WHM4, WHM5, WHM6, WHM7, WHM8, WHM9, WHM10, WHM1_2), sep = ",")
+    WHF <- unite(code1111[56:66], "WHF", c(WHF1, WHF2, WHF3, WHF4, WHF5, WHF6, WHF7, WHF8, WHF9, WHF10, WHF1_2), sep = ",")
+    agrt <- cbind(Total, MT, FT, WHT, WHM, WHF)
 
     test <- data.frame(t(agrt))
     names(test)[1] <- "randomName"
-    # test
-    # separate(test,test[,1],c("job1", "job2"), sep = ",")
-    
-    # messy <- data.frame(
-    #     #    name = c("Totaltest"), 
-    #     test
-    # )
-    # messy
-    print(separate(test,randomName,c("job1", "job2", "job3", "job4", "job5", "job6", "job7", "job8", "job9", "job10", "job1_2"), sep = ","))
-    
-}
-# }
 
-# callRow(1111)
-# 
-# which(1112 == c(YEAR09_NAC4[1:301,1]))
+    print(separate(test,randomName,c("job1", "job2", "job3", "job4", "job5", "job6", "job7", "job8", "job9", "job10", "job1_2"), sep = ","))
+}
