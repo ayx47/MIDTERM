@@ -18,6 +18,8 @@ output <- function(x) {
 
     test <- data.frame(t(agrt))
     names(test)[1] <- "randomName"
-
-    print(separate(test,randomName,c("job1", "job2", "job3", "job4", "job5", "job6", "job7", "job8", "job9", "job10", "job1_2"), sep = ","))
+    print(separate(test,randomName,c("Total Employment", "Executive/Senior Level Officials & Managemeners", "First/Mid Level Officials & Managers",
+                                     "Professionals", "Technicians", "Sales Workers", "Office & Clerical Workers", "Craft Workers", "Operatives", 
+                                     "Laborers", "Service Workers"), sep = ","))
 }
+    
