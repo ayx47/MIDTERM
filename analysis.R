@@ -18,8 +18,7 @@ output <- function(x) {
     BLKM <- unite(code1111[78:88],"BLKM", c(BLKM10, BLKM1, BLKM1_2, BLKM2, BLKM3, BLKM4, BLKM5, BLKM6, BLKM7, BLKM8, BLKM9), sep = ",")
     BLKF <- unite(code1111[89:99], "BLKF", c(BLKF10, BLKF1, BLKF1_2, BLKF2, BLKF3, BLKF4, BLKF5, BLKF6, BLKF7, BLKF8, BLKF9), sep = ",")
     
->>>>>>> Stashed changes
-    agrt <- cbind(Total, MT, FT, WHT, WHM, WHF)
+    agrt <- cbind(Total, MT, FT, WHT, WHM, WHF, BLKT, BLKM, BLKF)
 
     test <- data.frame(t(agrt))
     names(test)[1] <- "randomName"
