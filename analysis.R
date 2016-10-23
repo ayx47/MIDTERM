@@ -11,6 +11,9 @@ output <- function(x) {
     Total <- unite(code1111[1:11],"Total",c(TOTAL10, TOTAL1,TOTAL1_2, TOTAL2, TOTAL3, TOTAL4, TOTAL5, TOTAL6, TOTAL7, TOTAL8, TOTAL9), sep = ",")
     MT <- unite(code1111[12:22], "MT", c(MT10, MT1, MT1_2, MT2, MT3, MT4, MT5, MT6, MT7, MT8, MT9), sep = ",")
     FT <- unite(code1111[23:33], "FT", c(FT10, FT1, FT1_2, FT2, FT3, FT4, FT5, FT6, FT7, FT8, FT9), sep = ",")
+    MINT <- unite(code1111[265:275], "MINT", c(MinT10, MinT1, MinT1_2, MinT2, MinT3, MinT4, MinT5, MinT6, MinT7, MinT8, MinT9), sep = ",")
+    MINF <- unite(code1111[276:286], "MINF", c(MinF10, MinF1, MinF1_2, MinF2, MinF3, MinF4, MinF5, MinF6, MinF7, MinF8, MinF9), sep = ",")
+    MINM <- unite(code1111[287:297], "MINM", c(MinM10, MinM1, MinM1_2, MinM2, MinM3, MinM4, MinM5, MinM6, MinM7, MinM8, MinM9), sep = ",")
     WHT <- unite(code1111[34:44], "WHT", c( WHT10, WHT1, WHT1_2, WHT2, WHT3, WHT4, WHT5, WHT6, WHT7, WHT8, WHT9), sep = ",")
     WHM <- unite(code1111[45:55],"WHM",c(WHM10, WHM1, WHM1_2, WHM2, WHM3, WHM4, WHM5, WHM6, WHM7, WHM8, WHM9), sep = ",")
     WHF <- unite(code1111[56:66], "WHF", c(WHF10, WHF1, WHF1_2, WHF2, WHF3, WHF4, WHF5, WHF6, WHF7, WHF8, WHF9), sep = ",")
@@ -29,7 +32,10 @@ output <- function(x) {
     NHOPIT <- unite(code1111[199:209], "NHOPIT", c(nhopiT10, nhopiT1, nhopiT1_2, nhopiT2, nhopiT3, nhopiT4, nhopiT5, nhopiT6, nhopiT7, nhopiT8, nhopiT9),sep = ",")
     NHOPIM <- unite(code1111[210:220], "NHOPTM", c(NHOPIM10, NHOPIM1, NHOPIM1_2, NHOPIM2, NHOPIM3, NHOPIM4, NHOPIM5, NHOPIM6, NHOPIM7, NHOPIM8, NHOPIM9),sep = ",")
     NHOPIF <- unite(code1111[221:231], "NHOPTF", c(NHOPIF10, NHOPIF1, NHOPIF1_2, NHOPIF2, NHOPIF3, NHOPIF4, NHOPIF5, NHOPIF6, NHOPIF7, NHOPIF8, NHOPIF9),sep = ",")
-    agrt <- cbind(Total, MT, FT, WHT, WHM, WHF, BLKT, BLKM, BLKF, HISPT, HISPM, ASIANT, ASIANM, ASIANF, AIANT, AIANM, AIANF, NHOPIT, NHOPIM, NHOPIF)
+    TOMRT <- unite(code1111[232:242], "TOMRT", c(tomrT10, tomrT1, tomrT1_2, tomrT2, tomrT3, tomrT4, tomrT5, tomrT6, tomrT7, tomrT8, tomrT9),sep = ",")
+    TOMRM <- unite(code1111[243:253], "TOMRM", c(TOMRM10, TOMRM1, TOMRM1_2, TOMRM2, TOMRM3, TOMRM4, TOMRM5, TOMRM6, TOMRM7, TOMRM8, TOMRM9), sep = ",")
+    TOMRF <- unite(code1111[254:264], "TOMRF", c(TOMRF10, TOMRF1, TOMRF1_2, TOMRF2, TOMRF3, TOMRF4, TOMRF5, TOMRF6, TOMRF7, TOMRF8, TOMRF9), sep = ",")
+    agrt <- cbind(Total, MT, FT, WHT, WHM, WHF, MINT, MINM, MINF, BLKT, BLKM, BLKF, HISPT, HISPM, ASIANT, ASIANM, ASIANF, AIANT, AIANM, AIANF, NHOPIT, NHOPIM, NHOPIF, TOMRT, TOMRM, TOMRF)
 
     test <- data.frame(t(agrt))
     names(test)[1] <- "randomName"
