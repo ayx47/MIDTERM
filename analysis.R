@@ -14,7 +14,11 @@ output <- function(x) {
     WHT <- unite(code1111[34:44], "WHT", c( WHT10, WHT1, WHT1_2, WHT2, WHT3, WHT4, WHT5, WHT6, WHT7, WHT8, WHT9), sep = ",")
     WHM <- unite(code1111[45:55],"WHM",c(WHM10, WHM1, WHM1_2, WHM2, WHM3, WHM4, WHM5, WHM6, WHM7, WHM8, WHM9), sep = ",")
     WHF <- unite(code1111[56:66], "WHF", c(WHF10, WHF1, WHF1_2, WHF2, WHF3, WHF4, WHF5, WHF6, WHF7, WHF8, WHF9), sep = ",")
-    BLKT <- unite(code1111[67:77], "BLKT", c(BLKT10, BLKT1, BLKT1_2, BLKT2, BLKT3, BLKT4, BLKT5, BLKT6, BLKT7, BLKT8, BLKT9), sep = ",")
+    BLKT <- unite(code1111[67:77],"BLKT", c(BLKT10, BLKT1, BLKT1_2, BLKT2, BLKT3, BLKT4, BLKT5, BLKT6, BLKT7, BLKT8, BLKT9), sep = ",")
+    BLKM <- unite(code1111[78:88],"BLKM", c(BLKM10, BLKM1, BLKM1_2, BLKM2, BLKM3, BLKM4, BLKM5, BLKM6, BLKM7, BLKM8, BLKM9), sep = ",")
+    BLKF <- unite(code1111[89:99], "BLKF", c(BLKF10, BLKF1, BLKF1_2, BLKF2, BLKF3, BLKF4, BLKF5, BLKF6, BLKF7, BLKF8, BLKF9), sep = ",")
+    
+>>>>>>> Stashed changes
     agrt <- cbind(Total, MT, FT, WHT, WHM, WHF)
 
     test <- data.frame(t(agrt))
